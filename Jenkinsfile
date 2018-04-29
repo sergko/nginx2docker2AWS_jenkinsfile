@@ -11,6 +11,7 @@ pipeline {
         sh 'docker build -t opswork/nginx:1.14.0-${BUILD_NUMBER} -t opswork/nginx:latest .'
         withCredentials([usernamePassword(credentialsId: 'dockerHub_skovb', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh "docker tag ng114_lua01012 sergko/opsworks_nginx_luamod"
           sh 'docker push opswork/nginx:latest'
         }
       }
