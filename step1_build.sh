@@ -63,7 +63,7 @@ mv ./docs/html/index.html ./docs/html/index.html_orig
 mv index.html ./docs/html/index.html
 
 #//etc/nginx/nginx.conf
-PATHgit="assets/html"
+PATHgit="assets"
 #PATHgit="opsworks/nginx/release"
 FILEO="nginx.conf"
 FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO"
