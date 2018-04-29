@@ -1,11 +1,12 @@
 FROM ubuntu:18.04
 MAINTAINER Sergey Kovbyk <kovbyk@gmail.com>
 # a few minor docker-specific tweaks
-ADD ./nginx-opswork.deb /opt
+ADD /tmp/nginx-opswork.deb /opt
 RUN set -xe \
 && apt update \
 && apt install -yq --no-install-recommends *liblua5.1* \
-&& dpkg -i /opt/nginx-opswork.deb.
+&& dpkg -i /opt/nginx-opswork.deb \
+&& rm -f /tmp/nginx-opswork.deb
 #probably unnecessary for docker to use daemon )
 #COPY nginx /etc/init.d/nginx
 # forward request and error logs to docker log collector
