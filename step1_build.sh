@@ -62,9 +62,6 @@ make clean
 #chmod -R 0644 $FILEO
 #mv ./docs/html/index.html ./docs/html/index.html_orig
 #mv index.html ./docs/html/index.html
-pwd
-whoami
-chmod -R 0644  ../assets
 mv ./docs/html/index.html ./docs/html/index.html_orig
 cp ../assets/html/index.html ./docs/html/index.html
 
