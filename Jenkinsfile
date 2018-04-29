@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Dokerize') {
       steps {
-        sh 'step2_dokerize.sh'
+        sh './step2_dokerize.sh'
       }
     }
     stage('Deploy2AWS') {
