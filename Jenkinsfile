@@ -9,6 +9,9 @@ pipeline {
     stage('Dokerize') {
       steps {
         sh 'docker build -t opswork/nginx:1.14.0-${BUILD_NUMBER} -t opswork/nginx:latest .'
+        withCredentials([usernamePassword(credentialsId: 'dockerHub_skovb', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+          sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+          sh 'docker push opswork/nginx:latest'
       }
     }
     stage('Deploy2AWS') {
