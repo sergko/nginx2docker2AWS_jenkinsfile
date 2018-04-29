@@ -97,4 +97,7 @@ checkinstall -D -y --install=no -d2 \
 --pkgname=nginx-opswork \
 --pkgrelease=${BUILD_NUMBER} 
 #make -n install \
-cp nginx-opswork_`date '+%Y%m%d'`-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
+#cp nginx-opswork_`date '+%Y%m%d'`-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
+#cp -f nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
+#cp -f nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
+ln -sf nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
