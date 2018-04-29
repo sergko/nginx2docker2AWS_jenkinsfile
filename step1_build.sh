@@ -105,4 +105,7 @@ checkinstall -D -y --install=no -d2 \
 #cp nginx-opswork_`date '+%Y%m%d'`-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
 #cp -f nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
 #cp -f nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
-ln -sf nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
+#ln -sf nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb /tmp/nginx-opswork.deb
+#ln -sf nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb ../nginx-opswork.deb
+cd ..
+cp -f ./$ngrelPATH/nginx-opswork_1.14.0-${BUILD_NUMBER}_amd64.deb nginx-opswork.deb
