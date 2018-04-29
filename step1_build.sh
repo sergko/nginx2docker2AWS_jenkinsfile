@@ -5,7 +5,7 @@
 #--add-module=/usr/src/ngx_devel_kit-0.3.0 \
 #--add-module=/usr/src/lua-nginx-module-0.10.12 \
 #1.1. configure from source code
-test -f './release-1.14.0.tar.gz' || wget wget https://github.com/nginx/nginx/archive/release-1.14.0.tar.gz
+test -f './release-1.14.0.tar.gz' || wget https://github.com/nginx/nginx/archive/release-1.14.0.tar.gz
 test -d './nginx-release-1.14.0' || tar -xf release-1.14.0.tar.gz
 cd nginx-release-1.14.0
 test -d './modules' || mkdir modules
