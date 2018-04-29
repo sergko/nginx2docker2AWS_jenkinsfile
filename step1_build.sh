@@ -5,9 +5,10 @@
 #--add-module=/usr/src/ngx_devel_kit-0.3.0 \
 #--add-module=/usr/src/lua-nginx-module-0.10.12 \
 #1.1. configure from source code
+ngrelPATH = "nginx-release-1.14.0"
 test -f './release-1.14.0.tar.gz' || wget https://github.com/nginx/nginx/archive/release-1.14.0.tar.gz
-test -d './nginx-release-1.14.0' || tar -xf release-1.14.0.tar.gz
-cd nginx-release-1.14.0
+test -d './$ngrelPATH' || tar -xf release-1.14.0.tar.gz
+cd $ngrelPATH
 test -d './modules' || mkdir modules
 cd modules
 test -f './v0.3.0.tar.gz' || wget https://github.com/simplresty/ngx_devel_kit/archive/v0.3.0.tar.gz
@@ -46,34 +47,39 @@ make clean
 #_orig means file from original package
 
 
-OWNER="sergko"
-REPO="nginx2docker2AWS_jenkinsfile"
+#OWNER="sergko"
+#REPO="nginx2docker2AWS_jenkinsfile"
 #REF="master"
 
-#/etc/nginx/html/index.html
-PATHgit="assets/html"
-FILEO="index.html"
-#FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO?ref=$REF"
-FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO"
-curl -v --header 'Accept: application/vnd.github.v3.raw' \
-        -o $FILEO \
-        --location $FILE
-chmod 0644 $FILEO
+##/etc/nginx/html/index.html
+#PATHgit="assets/html"
+#FILEO="index.html"
+##FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO?ref=$REF"
+#FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO"
+#curl -v --header 'Accept: application/vnd.github.v3.raw' \
+#        -o $FILEO \
+#        --location $FILE
+#chmod 0644 $FILEO
+#mv ./docs/html/index.html ./docs/html/index.html_orig
+#mv index.html ./docs/html/index.html
+pwd
 mv ./docs/html/index.html ./docs/html/index.html_orig
-mv index.html ./docs/html/index.html
+mv ../assets/index.html ./docs/html/index.html
 
-#//etc/nginx/nginx.conf
-PATHgit="assets"
+##/etc/nginx/nginx.conf
+#PATHgit="assets"
 #PATHgit="opsworks/nginx/release"
-FILEO="nginx.conf"
-FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO"
-#FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO?ref=$REF"
-curl -v --header 'Accept: application/vnd.github.v3.raw' \
-        -o $FILEO \
-        --location $FILE
-chmod 0644 $FILEO
+#FILEO="nginx.conf"
+#FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO"
+##FILE="https://api.github.com/repos/$OWNER/$REPO/contents/$PATHgit/$FILEO?ref=$REF"
+#curl -v --header 'Accept: application/vnd.github.v3.raw' \
+#        -o $FILEO \
+#        --location $FILE
+#chmod 0644 $FILEO
+#mv ./conf/nginx.conf ./conf/nginx.conf_oring
+#mv nginx.conf ./conf/nginx.conf
 mv ./conf/nginx.conf ./conf/nginx.conf_oring
-mv nginx.conf ./conf/nginx.conf
+mv ../assets/nginx.conf ./conf/nginx.conf
 
 #/etc/init.d/nginx
 #PATHgit="opsworks/nginx/release"
