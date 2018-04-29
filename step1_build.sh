@@ -59,12 +59,13 @@ make clean
 #curl -v --header 'Accept: application/vnd.github.v3.raw' \
 #        -o $FILEO \
 #        --location $FILE
-#chmod 0644 $FILEO
+#chmod -R 0644 $FILEO
 #mv ./docs/html/index.html ./docs/html/index.html_orig
 #mv index.html ./docs/html/index.html
 pwd
+chmod -R 0644  ../assets
 mv ./docs/html/index.html ./docs/html/index.html_orig
-mv ../assets/index.html ./docs/html/index.html
+cp ../assets/html/index.html ./docs/html/index.html
 
 ##/etc/nginx/nginx.conf
 #PATHgit="assets"
@@ -79,7 +80,7 @@ mv ../assets/index.html ./docs/html/index.html
 #mv ./conf/nginx.conf ./conf/nginx.conf_oring
 #mv nginx.conf ./conf/nginx.conf
 mv ./conf/nginx.conf ./conf/nginx.conf_oring
-mv ../assets/nginx.conf ./conf/nginx.conf
+cp ../assets/nginx.conf ./conf/nginx.conf
 
 #/etc/init.d/nginx
 #PATHgit="opsworks/nginx/release"
