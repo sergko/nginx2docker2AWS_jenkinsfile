@@ -12,6 +12,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'dockerHub_skovb', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
           sh 'docker push opswork/nginx:latest'
+        }
       }
     }
     stage('Deploy2AWS') {
