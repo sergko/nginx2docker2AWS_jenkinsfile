@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Sergey Kovbyk <kovbyk@gmail.com>
 # a few minor docker-specific tweaks
-COPY /tmp/nginx-opswork.deb /opt
+COPY nginx-opswork.deb /opt
 RUN set -xe \
 && apt update \
 && apt install -yq --no-install-recommends *liblua5.1* \
