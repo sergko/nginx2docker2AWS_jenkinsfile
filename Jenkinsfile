@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Dokerize') {
       steps {
-        sh './step2_dokerize.sh'
+        sh 'docker build -t opswork/nginx:1.14.0-${BUILD_NUMBER} -t opswork/nginx:latest .'
       }
     }
     stage('Deploy2AWS') {
