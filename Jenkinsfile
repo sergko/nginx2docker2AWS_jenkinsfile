@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('BuildDeb') {
       steps {
-        sh '/var/lib/jenkins/workspace/cker2AWS_jenkinsfile_master-CTO4CSEPZPZLF7LVXZP3Y5QFUTKVOTEV6PRO52RRRXBQNDSWFA6A/step1_build.sh'
-        sh 'echo "BuiltDeb step1 done!"'
+        sh './step1_build.sh'
       }
     }
     stage('Dokerize') {
