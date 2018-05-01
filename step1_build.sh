@@ -5,10 +5,10 @@
 #--add-module=/usr/src/ngx_devel_kit-0.3.0 \
 #--add-module=/usr/src/lua-nginx-module-0.10.12 \
 #1.1. configure from source code
-ngrelPATH="nginx-release-1.14.0"
-test -f './release-1.14.0.tar.gz' || wget https://github.com/nginx/nginx/archive/release-1.14.0.tar.gz
-test -d './$ngrelPATH' || tar -xf release-1.14.0.tar.gz
-cd $ngrelPATH
+#ngrelPATH="nginx-release-1.14.0"
+#test -f './release-1.14.0.tar.gz' || wget https://github.com/nginx/nginx/archive/release-1.14.0.tar.gz
+#test -d './$ngrelPATH' || tar -xf release-1.14.0.tar.gz
+#cd $ngrelPATH
 test -d './modules' || mkdir modules
 cd modules
 test -f './v0.3.0.tar.gz' || wget https://github.com/simplresty/ngx_devel_kit/archive/v0.3.0.tar.gz
